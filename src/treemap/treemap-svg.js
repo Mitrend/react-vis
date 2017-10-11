@@ -83,6 +83,7 @@ class TreemapSVG extends React.Component {
   getNonCircularNodes() {
     const {
       animation,
+      includeRootNode,
       nodes,
       onLeafMouseOver,
       onLeafMouseOut,
@@ -92,7 +93,7 @@ class TreemapSVG extends React.Component {
     } = this.props;
     const {color} = scales;
     return nodes.reduce((acc, node, index) => {
-      if (!index) {
+      if (!index && !includeRootNode) {
         return acc;
       }
       const {x0, x1, y1, y0} = node;

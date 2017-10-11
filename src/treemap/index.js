@@ -174,6 +174,7 @@ Treemap.propTypes = {
   className: PropTypes.string,
   data: PropTypes.object.isRequired,
   height: PropTypes.number.isRequired,
+  includeRootNode: PropTypes.bool,
   margin: MarginPropType,
   mode: PropTypes.oneOf(
     Object.keys(TREEMAP_TILE_MODES).concat(TREEMAP_LAYOUT_MODES)
@@ -194,6 +195,7 @@ Treemap.defaultProps = {
   data: {
     children: []
   },
+  includeRootNode: false,
   margin: DEFAULT_MARGINS,
   mode: 'squarify',
   onLeafClick: NOOP,
